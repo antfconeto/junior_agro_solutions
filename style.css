@@ -623,7 +623,7 @@ svg {
 }
 
 .whatsapp-cta-container {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
 }
@@ -634,7 +634,7 @@ svg {
     max-width: 500px;
     background: #25D366;
     /* Official WhatsApp Green */
-    padding: 1.5rem 2rem;
+    padding: 1rem 1rem;
     border-radius: 20px;
     display: flex;
     align-items: center;
