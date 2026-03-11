@@ -107,49 +107,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    /* =========================================
-       FORM SUBMISSION WITH FORMSUBMIT
-       ========================================= */
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
 
-            btn.innerHTML = 'Enviando...';
-            btn.disabled = true;
-
-            const formData = new FormData(contactForm);
-
-            fetch(contactForm.getAttribute('action'), {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            })
-                .then(response => {
-                    if (response.ok) {
-                        btn.innerHTML = 'Mensagem Enviada! <i class="ph-fill ph-check-circle"></i>';
-                        btn.style.background = 'var(--primary-green, #2ecc71)';
-                        contactForm.reset();
-                    } else {
-                        btn.innerHTML = 'Erro ao enviar <i class="ph-fill ph-x-circle"></i>';
-                        btn.style.background = '#e74c3c';
-                    }
-                })
-                .catch(error => {
-                    btn.innerHTML = 'Erro de rede <i class="ph-fill ph-warning-circle"></i>';
-                    btn.style.background = '#e74c3c';
-                })
-                .finally(() => {
-                    setTimeout(() => {
-                        btn.innerHTML = originalText;
-                        btn.style.background = ''; // reset to default css gradient
-                        btn.disabled = false;
-                    }, 4000);
-                });
-        });
-    }
 });
