@@ -242,9 +242,9 @@ svg {
     color: var(--primary-green);
 }
 
-.logo i {
-    color: var(--light-green);
-    font-size: 2rem;
+.logo img {
+    height: 40px;
+    width: auto;
 }
 
 .nav-list {
@@ -763,8 +763,9 @@ svg {
     margin-bottom: 1rem;
 }
 
-.footer-logo i {
-    color: var(--light-green);
+.footer-logo img {
+    height: 50px;
+    width: auto;
 }
 
 .footer-description {
